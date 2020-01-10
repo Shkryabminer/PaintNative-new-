@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="203" translatesAutoresizingMaskIntoConstraints="NO" customClass="PaintView">
+                                <rect key="frame" x="20" y="20" width="374" height="556"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5840" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="28" y="620" width="30" height="30"/>
+                                <state key="normal" title="Thin"/>
+                                <constraints>
+                                    <constraint id="7733" firstAttribute="height" constant="30"/>
+                                </constraints>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5842" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="28" y="658" width="55" height="30"/>
+                                <state key="normal" title="Medium"/>
+                                <constraints>
+                                    <constraint id="7734" firstAttribute="height" constant="30"/>
+                                </constraints>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5845" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="28" y="696" width="38" height="30"/>
+                                <state key="normal" title="Thick"/>
+                                <constraints>
+                                    <constraint id="7735" firstAttribute="height" constant="30"/>
+                                </constraints>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6978" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="189" y="678" width="36" height="30"/>
+                                <state key="normal" title="Clear"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7737" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="340" y="620" width="46" height="30"/>
+                                <constraints>
+                                    <constraint id="7740" firstAttribute="width" constant="46"/>
+                                    <constraint id="7741" firstAttribute="height" constant="30"/>
+                                </constraints>
+                                <color key="backgroundColor" systemColor="systemRedColor" colorSpace="custom" customColorSpace="sRGB" red="1" green="0.231372549019608" blue="0.188235294117647" alpha="1"/>
+                                <state key="normal"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7742" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="340" y="658" width="46" height="30"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" colorSpace="calibratedRGB" red="1" green="0.8" blue="0" alpha="1"/>
+                                <state key="normal"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7747" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="340" y="696" width="46" height="30"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" colorSpace="custom" customColorSpace="sRGB" red="0.203921568627451" green="0.780392156862745" blue="0.349019607843137" alpha="1"/>
+                                <state key="normal"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8020" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="184" y="640" width="46" height="30"/>
+                                <state key="normal" title="Back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8296" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="582" width="34" height="30"/>
+                                <state key="normal" title="Load"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8297" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="360" y="575" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections/>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint id="204" firstItem="203" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom"/>
+                            <constraint id="205" firstAttribute="trailingMargin" secondItem="203" secondAttribute="trailing"/>
+                            <constraint id="206" firstItem="203" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
+                            <constraint id="7424" firstItem="5840" firstAttribute="top" secondItem="203" secondAttribute="bottom" constant="44"/>
+                            <constraint id="7525" firstItem="5842" firstAttribute="top" secondItem="5840" secondAttribute="bottom" constant="8"/>
+                            <constraint id="7526" firstItem="5840" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8"/>
+                            <constraint id="7527" firstItem="5842" firstAttribute="leading" secondItem="5840" secondAttribute="leading"/>
+                            <constraint id="7678" firstItem="5845" firstAttribute="leading" secondItem="5840" secondAttribute="leading"/>
+                            <constraint id="7679" firstItem="5845" firstAttribute="top" secondItem="5842" secondAttribute="bottom" constant="8"/>
+                            <constraint id="7680" firstAttribute="bottom" secondItem="5845" secondAttribute="bottom" constant="10"/>
+                            <constraint id="7731" firstItem="6978" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
+                            <constraint id="7732" firstItem="6978" firstAttribute="bottom" secondItem="5842" secondAttribute="bottom" constant="20"/>
+                            <constraint id="7738" firstAttribute="trailingMargin" secondItem="7737" secondAttribute="trailing" constant="8"/>
+                            <constraint id="7739" firstItem="7737" firstAttribute="bottom" secondItem="5840" secondAttribute="bottom"/>
+                            <constraint id="7743" firstItem="7742" firstAttribute="trailing" secondItem="7737" secondAttribute="trailing"/>
+                            <constraint id="7744" firstItem="7742" firstAttribute="bottom" secondItem="5842" secondAttribute="bottom"/>
+                            <constraint id="7745" firstItem="7742" firstAttribute="width" secondItem="7737" secondAttribute="width"/>
+                            <constraint id="7746" firstItem="7742" firstAttribute="height" secondItem="7737" secondAttribute="height"/>
+                            <constraint id="7748" firstItem="7747" firstAttribute="trailing" secondItem="7737" secondAttribute="trailing"/>
+                            <constraint id="7749" firstItem="7747" firstAttribute="height" secondItem="7737" secondAttribute="height"/>
+                            <constraint id="7750" firstItem="7747" firstAttribute="width" secondItem="7737" secondAttribute="width"/>
+                            <constraint id="7751" firstItem="7747" firstAttribute="bottom" secondItem="5845" secondAttribute="bottom"/>
+                            <constraint id="8021" firstItem="6978" firstAttribute="top" secondItem="8020" secondAttribute="bottom" constant="8"/>
+                            <constraint id="8022" firstItem="8020" firstAttribute="centerX" secondItem="203" secondAttribute="centerX"/>
+                            <constraint id="8336" firstItem="8296" firstAttribute="leading" secondItem="203" secondAttribute="leading"/>
+                            <constraint id="8337" firstItem="8296" firstAttribute="top" secondItem="203" secondAttribute="bottom" constant="6"/>
+                            <constraint id="8379" firstItem="203" firstAttribute="trailing" secondItem="8297" secondAttribute="trailing"/>
+                            <constraint id="8380" firstItem="203" firstAttribute="bottom" secondItem="8297" secondAttribute="top" constant="1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="_paintView" destination="203" id="name-outlet-203"/>
+                        <outlet property="_btnThin" destination="5840" id="name-outlet-5840"/>
+                        <outlet property="_btnMedium" destination="5842" id="name-outlet-5842"/>
+                        <outlet property="_btnThick" destination="5845" id="name-outlet-5845"/>
+                        <outlet property="_btnClear" destination="6978" id="name-outlet-6978"/>
+                        <outlet property="_btnRed" destination="7737" id="name-outlet-7737"/>
+                        <outlet property="_btnYellow" destination="7742" id="name-outlet-7742"/>
+                        <outlet property="_btnGreen" destination="7747" id="name-outlet-7747"/>
+                        <outlet property="_btnBack" destination="8020" id="name-outlet-8020"/>
+                        <outlet property="_btnLoad" destination="8296" id="name-outlet-8296"/>
+                        <outlet property="_btnSave" destination="8297" id="name-outlet-8297"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+</document>
