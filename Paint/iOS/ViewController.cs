@@ -45,7 +45,27 @@ namespace Paint.iOS
 
         private void BtnSaveOnTouchUpInside(object sender, EventArgs e)
         {
-            _drawKeeper.Save(_drawModel);
+            var alert = UIAlertController.Create("Save", "Select save paint", UIAlertControllerStyle.Alert);
+            if (alert.PopoverPresentationController != null)
+                alert.PopoverPresentationController.BarButtonItem = sender as UIBarButtonItem;
+
+            alert.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
+
+            alert.AddAction(UIAlertAction.Create("Save to File", UIAlertActionStyle.Default, action => {
+        
+            }));
+            alert.AddAction(UIAlertAction.Create("Save to Realm", UIAlertActionStyle.Default, action => {
+             
+            }));
+            alert.AddAction(UIAlertAction.Create("Save to SQLite", UIAlertActionStyle.Default, action => {
+
+            }));
+            alert.AddAction(UIAlertAction.Create("Save to NSUserDefoult", UIAlertActionStyle.Default, action => {
+
+                _drawKeeper.Save(_drawModel);
+            }));
+            PresentViewController(alert, animated: true, completionHandler: null);
+            
         }
 
         private void BtnBackTouchUpInside(object sender, EventArgs e)
