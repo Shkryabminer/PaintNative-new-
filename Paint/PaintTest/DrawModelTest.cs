@@ -26,7 +26,6 @@ namespace PaintTest
             int actual = drawModel.Paths.Count;
             Assert.AreEqual(expected, actual);
         }
-
         [Test]
         public void DrawModel_Test_Back()
         {
@@ -39,8 +38,6 @@ namespace PaintTest
         [TearDown]
         public void Destroy()
         {
-            drawModel = null;
+            Assert.Pass();
         }
-
     }
-}
