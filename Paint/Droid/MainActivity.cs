@@ -55,6 +55,8 @@ namespace Paint.Droid
                 case Resource.Id.SaveToRealm:
                     return true;
                 case Resource.Id.SaveToSQLite:
+                    _drawKeeper = new DrawKeeperFactory().Create(EDrawKeeperType.SQLite);
+                    _drawKeeper.Save(_drawModel);
                     return true;
                 case Resource.Id.Load:
                     _drawModel = _drawKeeper.Load();

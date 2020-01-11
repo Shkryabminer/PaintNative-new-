@@ -14,6 +14,12 @@ namespace Paint.Droid.Keeper
                     return new InternalKeeper();
                 case EDrawKeeperType.File:
                     return new FileKeeperDroid();
+                case EDrawKeeperType.SQLite:
+                    {
+                        var path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+                        var dbPath = System.IO.Path.Combine(path, "ormdemo.db3");
+                        return new SQLiteKepper(dbPath);
+                    }
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);
             }
