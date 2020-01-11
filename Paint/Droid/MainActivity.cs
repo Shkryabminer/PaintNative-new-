@@ -51,6 +51,8 @@ namespace Paint.Droid
                     _drawKeeper.Save(_drawModel);
                     return true;
                 case Resource.Id.SaveToNSUserDefoult:
+                    _drawKeeper = new DrawKeeperFactory().Create(EDrawKeeperType.Internal);
+                    _drawKeeper.Save(_drawModel);
                     return true;
                 case Resource.Id.SaveToRealm:
                     return true;
