@@ -45,7 +45,37 @@ namespace Paint.Droid
 		{
 			
 			// aapt resource value: 0x7F010000
-			public const int myButton = 2130771968;
+			public const int btnClear = 2130771968;
+			
+			// aapt resource value: 0x7F010001
+			public const int btnGreen = 2130771969;
+			
+			// aapt resource value: 0x7F010002
+			public const int btnLoad = 2130771970;
+			
+			// aapt resource value: 0x7F010003
+			public const int btnMedium = 2130771971;
+			
+			// aapt resource value: 0x7F010004
+			public const int btnRed = 2130771972;
+			
+			// aapt resource value: 0x7F010005
+			public const int btnSave = 2130771973;
+			
+			// aapt resource value: 0x7F010006
+			public const int btnThick = 2130771974;
+			
+			// aapt resource value: 0x7F010007
+			public const int btnThin = 2130771975;
+			
+			// aapt resource value: 0x7F010008
+			public const int btnUndo = 2130771976;
+			
+			// aapt resource value: 0x7F010009
+			public const int btnYellow = 2130771977;
+			
+			// aapt resource value: 0x7F01000A
+			public const int viewDraw = 2130771978;
 			
 			static Id()
 			{
