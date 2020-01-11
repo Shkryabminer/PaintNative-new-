@@ -4,6 +4,7 @@ namespace Paint.Draw
 {
     public struct Color
     {
+
         [JsonConstructor]
         public Color(byte red, byte green, byte blue)
         {
@@ -11,7 +12,6 @@ namespace Paint.Draw
             Green = green;
             Blue = blue;
         }
-
         [JsonProperty("red")]
         public byte Red { get; }
         
