@@ -2,6 +2,6 @@ namespace Paint.Keeper
 {
     public enum EDrawKeeperType
     {
-        Internal
+        Internal,File,Realm
     }
 }

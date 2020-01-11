@@ -8,12 +8,14 @@ namespace Paint.iOS.Keeper
         public IDrawKeeper Create(EDrawKeeperType type)
         {
             switch (type)
-                {
-                    case EDrawKeeperType.Internal:
-                        return new InternalKeeper();
-                    default:
-                        throw new ArgumentOutOfRangeException(nameof(type), type, null);
-                }
+            {
+                case EDrawKeeperType.Internal:
+                    return new InternalKeeper();
+                case EDrawKeeperType.File:
+                    return new FileKeeperIOS();
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(type), type, null);
+            }
         }
     }
 }

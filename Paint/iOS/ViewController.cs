@@ -21,7 +21,7 @@ namespace Paint.iOS
             _drawModel = new DrawModel();
             _paintView.Delegate = this;
             
-            _drawKeeper = new DrawKeeperFactory().Create(EDrawKeeperType.Internal);
+           
             
             _btnClear.TouchUpInside += BtnClearTouchUpInside;
             _btnBack.TouchUpInside += BtnBackTouchUpInside;
@@ -52,7 +52,8 @@ namespace Paint.iOS
             alert.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
 
             alert.AddAction(UIAlertAction.Create("Save to File", UIAlertActionStyle.Default, action => {
-        
+                _drawKeeper = new DrawKeeperFactory().Create(EDrawKeeperType.File);
+                _drawKeeper.Save(_drawModel);
             }));
             alert.AddAction(UIAlertAction.Create("Save to Realm", UIAlertActionStyle.Default, action => {
              
@@ -61,7 +62,7 @@ namespace Paint.iOS
 
             }));
             alert.AddAction(UIAlertAction.Create("Save to NSUserDefoult", UIAlertActionStyle.Default, action => {
-
+                _drawKeeper = new DrawKeeperFactory().Create(EDrawKeeperType.Internal);
                 _drawKeeper.Save(_drawModel);
             }));
             PresentViewController(alert, animated: true, completionHandler: null);
