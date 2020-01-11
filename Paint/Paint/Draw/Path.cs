@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
@@ -23,7 +24,12 @@ namespace Paint.Draw
         
         [JsonProperty("color")]
         public Color Color { get; set; }
-        
+
+        public static object Combine(string documents, string v)
+        {
+            throw new NotImplementedException();
+        }
+
         [JsonProperty("line_width")]
         public float LineWidth { get; set; }
     }

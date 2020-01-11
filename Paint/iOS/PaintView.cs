@@ -32,11 +32,11 @@ namespace Paint.iOS
             SetNeedsDisplay();
         }
 
-        private void Tap(UITapGestureRecognizer recognizer)
+       private void Tap(UITapGestureRecognizer recognizer)
         {
             var point = recognizer.LocationInView(this).GetPoint();
             Delegate?.PathStartedAt(point);
-            Delegate?.PathAppendedAt(new Point(point.X + 1, point.Y + 1));
+            Delegate?.PathAppendedAt(new Point(point.X, point.Y));
         }
 
         private void Pan(UIPanGestureRecognizer recognizer)
