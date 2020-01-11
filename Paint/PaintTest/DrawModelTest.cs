@@ -18,3 +18,4 @@ namespace PaintTest
             Assert.Pass();
         }
     }
+}
