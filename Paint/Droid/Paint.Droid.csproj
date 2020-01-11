@@ -216,14 +216,11 @@
     <AndroidResource Include="Resources\layout\Main.xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Folder Include="Keeper\" />
-=======
     <AndroidResource Include="Resources\values\StyleForToolbar.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\menu\ToolbarMenu.xml" />
->>>>>>> 6faefa01f310dfcaca68fbec9227e01ef733aafa
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Fody.6.0.0\build\Fody.targets" Condition="Exists('..\packages\Fody.6.0.0\build\Fody.targets')" />
