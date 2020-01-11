@@ -2,11 +2,13 @@
 using Android.Widget;
 using Android.OS;
 using Paint.Draw;
+using Android.Support.V7.App;
+using Android.Views;
 
 namespace Paint.Droid
 {
     [Activity(Label = "Paint", MainLauncher = true, Icon = "@mipmap/icon")]
-    public class MainActivity : Activity, IPaintViewDelegate
+    public class MainActivity : AppCompatActivity, IPaintViewDelegate
     {
         DrawLine _drawingLine;
         DrawModel _drawModel;
@@ -19,12 +21,30 @@ namespace Paint.Droid
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main);
+            var menu = FindViewById<@Android.Support.V7.Widget.Toolbar>(Resource.Id.menuForSave);
+            SetSupportActionBar(menu);
             LinearLayout linear = FindViewById<LinearLayout>(Resource.Id.viewDraw);
             _drawingLine = new DrawLine(this);
             linear.AddView(_drawingLine);
             _drawingLine.Delegate = this;
             _drawModel = new DrawModel();
             ButtonInitialize();
+        }
+
+        // создание тулбара
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            this.MenuInflater.Inflate(Resource.Menu.ToolbarMenu, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        // обработка тулбара
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                default: return base.OnOptionsItemSelected(item);
+            }
         }
         private void BtnClear_Click(object sender, System.EventArgs e)
         {
