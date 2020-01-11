@@ -59,7 +59,8 @@ namespace Paint.iOS
              
             }));
             alert.AddAction(UIAlertAction.Create("Save to SQLite", UIAlertActionStyle.Default, action => {
-
+                _drawKeeper = new DrawKeeperFactory().Create(EDrawKeeperType.SQLite);
+                _drawKeeper.Save(_drawModel);
             }));
             alert.AddAction(UIAlertAction.Create("Save to NSUserDefoult", UIAlertActionStyle.Default, action => {
                 _drawKeeper = new DrawKeeperFactory().Create(EDrawKeeperType.Internal);
