@@ -1,12 +1,15 @@
 using NUnit.Framework;
+using Paint.Draw;
 
 namespace PaintTest
-{
+{    
     public class Tests
     {
-        [SetUp]
+        DrawModel drawModel;
+       [SetUp]
         public void Setup()
         {
+
         }
 
         [Test]
