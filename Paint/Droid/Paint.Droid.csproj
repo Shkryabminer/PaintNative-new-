@@ -214,6 +214,8 @@
     <Compile Include="Keeper\DrawKeeperFactory.cs" />
     <Compile Include="Keeper\FileKeeperDroid.cs" />
     <Compile Include="Keeper\InternalKeeper.cs" />
+    <Compile Include="Model\DrawRealm.cs" />
+    <Compile Include="Keeper\RealmKeeper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -238,6 +240,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\menu\ToolbarMenu.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Fody.6.0.0\build\Fody.targets" Condition="Exists('..\packages\Fody.6.0.0\build\Fody.targets')" />

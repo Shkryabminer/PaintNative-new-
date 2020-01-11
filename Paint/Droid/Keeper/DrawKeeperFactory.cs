@@ -20,6 +20,8 @@ namespace Paint.Droid.Keeper
                         var dbPath = System.IO.Path.Combine(path, "ormdemo.db3");
                         return new SQLiteKepper(dbPath);
                     }
+                case EDrawKeeperType.Realm:
+                    return new RealmKeeper(); 
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);
             }
