@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#FFFFFF">
+
+    <android.support.v7.widget.Toolbar
+        android:id ="@+id/menuForSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight = "?android:attr/actionBarSize"
+        android:background = "?android:attr/colorPrimary"
+        android:elevation = "4dp"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -22,21 +31,14 @@
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:orientation="vertical">
-              <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:id="@+id/btnSave"
-                android:text="Save" 
-                android:background="#FFF"
-                android:textAllCaps="false"              
-                android:textColor="#008B8B"/>
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnThin"
                 android:layout_gravity="center"
-                android:background="#FFF"
+                android:layout_weight="1"
+                android:backgroundTint="#FFF"
                 android:text="Thin"
                 android:textAllCaps="false"              
                 android:textColor="#008B8B" />
@@ -45,17 +47,19 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/btnMedium"
                 android:layout_gravity="center"
+                android:layout_weight="1"
                 android:text="Medium"
-                android:background="#FFF"
+                android:backgroundTint="#FFF"
                 android:textAllCaps="false"              
                 android:textColor="#008B8B"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_weight="1"
                 android:id="@+id/btnThick"
                 android:text="Thick"  
-                android:background="#FFF"
+                android:backgroundTint="#FFF"
                 android:textAllCaps="false"              
                 android:textColor="#008B8B"/>
           
@@ -92,15 +96,7 @@
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:id="@+id/btnLoad"
-                android:text="Load"  
-                android:background="#FFF"
-                android:textAllCaps="false"              
-                android:textColor="#008B8B"/>
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
