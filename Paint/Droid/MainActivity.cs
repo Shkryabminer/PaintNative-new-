@@ -4,12 +4,15 @@ using Android.OS;
 using Paint.Draw;
 using Android.Support.V7.App;
 using Android.Views;
+using Paint.Keeper;
+using Paint.Droid.Keeper;
 
 namespace Paint.Droid
 {
     [Activity(Label = "Paint", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : AppCompatActivity, IPaintViewDelegate
     {
+        private IDrawKeeper _drawKeeper;
         DrawLine _drawingLine;
         DrawModel _drawModel;
         Paint.Draw.Color colorPaint;
@@ -31,19 +34,34 @@ namespace Paint.Droid
             ButtonInitialize();
         }
 
-        // создание тулбара
+      
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             this.MenuInflater.Inflate(Resource.Menu.ToolbarMenu, menu);
             return base.OnCreateOptionsMenu(menu);
         }
 
-        // обработка тулбара
+      
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             switch (item.ItemId)
             {
-                default: return base.OnOptionsItemSelected(item);
+                case Resource.Id.SaveToFile:
+                    _drawKeeper = new DrawKeeperFactory().Create(EDrawKeeperType.File);
+                    _drawKeeper.Save(_drawModel);
+                    return true;
+                case Resource.Id.SaveToNSUserDefoult:
+                    return true;
+                case Resource.Id.SaveToRealm:
+                    return true;
+                case Resource.Id.SaveToSQLite:
+                    return true;
+                case Resource.Id.Load:
+                    _drawModel = _drawKeeper.Load();
+                    _drawingLine.UpdateView(_drawModel.Paths);
+                    return true;
+
+                default: return false;
             }
         }
         private void BtnClear_Click(object sender, System.EventArgs e)
