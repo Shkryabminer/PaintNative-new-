@@ -9,8 +9,12 @@ namespace Paint.iOS.Keeper
     public class FileKeeperIOS : IDrawKeeper
     {
         private const string UserDefaultsKey = "SaveModal.json";
+<<<<<<< HEAD
        
         DrawModel IDrawKeeper.Load()
+=======
+        public DrawModel Load()
+>>>>>>> db61607eec7cd17e21fa6d0ee1413a1f9528fe3b
         {
          
             var strModel = File.ReadAllText(FileName());
@@ -18,7 +22,7 @@ namespace Paint.iOS.Keeper
             return drawModel;
         }
 
-        void IDrawKeeper.Save(DrawModel model)
+        public void Save(DrawModel model)
         {
             if (model == null)
             {

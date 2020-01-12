@@ -1,4 +1,4 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Paint.Draw;
 using System.Collections.Generic;
 using UIKit;
@@ -16,7 +16,7 @@ namespace PaintTest
 
             Path path = new Path(points1, new Color(1, 2, 3), 10f);
             Path path2 = new Path(points2, new Color(1, 2, 3), 10f);
-          
+
             drawModel = new DrawModel(new List<Path>() { path, path2 }, new Color(1, 2, 3), 15f);
         }
 
