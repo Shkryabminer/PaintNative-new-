@@ -14,7 +14,7 @@ namespace PaintTest
         FileKeeperIOS file;
         InternalKeeper internalKeeper;
         DrawKeeperFactory factory;
-        Paint.iOS.Keeper.RealmKeeper realm1;
+        RealmKeeper realm1;
 
         Paint.Keeper.SQLiteKepper sQLite;
 
@@ -39,18 +39,7 @@ namespace PaintTest
             sQLite = new Paint.Keeper.SQLiteKepper(dbPath);
         }
 
-        /*     [Test]
-             public void InternalKeeperIOSTest()
-             {
-                 internalKeeper= new Paint.iOS.Keeper.InternalKeeper();
-                 internalKeeper.Save(testDrawModel);
-
-                 actualDrawModel = internalKeeper.Load();
-
-                 Assert.AreEqual(testDrawModel.CurrentLineWidth, actualDrawModel.CurrentLineWidth);
-                 Assert.AreEqual(testDrawModel.CurrentColor, actualDrawModel.CurrentColor);
-                 Assert.AreEqual(testDrawModel.Paths.Count, actualDrawModel.Paths.Count);
-             }*/
+       
 
 
         [Test]
@@ -61,6 +50,8 @@ namespace PaintTest
             actualDrawModel = realm1.Load();
 
             Assert.AreEqual(testDrawModel.CurrentLineWidth, actualDrawModel.CurrentLineWidth);
+            Assert.AreEqual(testDrawModel.CurrentColor, actualDrawModel.CurrentColor);
+            Assert.AreEqual(testDrawModel.Paths.Count, actualDrawModel.Paths.Count);
         }
 
 
@@ -77,17 +68,6 @@ namespace PaintTest
             Assert.AreEqual(testDrawModel.Paths.Count, actualDrawModel.Paths.Count);
         }
 
-        /*  [Test]
-          public void FactoryKeeperIOSTest()
-          {
-            factory= new Paint.iOS.Keeper.DrawKeeperFactory();
-              FileKeeperIOS excpected = new FileKeeperIOS();
-              //var actual = factory.Create(EDrawKeeperType.File);
-
-              FileKeeperIOS actual = new FileKeeperIOS();
-              Assert.AreEqual(excpected, actual);
-              // Assert.AreSame(excpected, actual);
-          }*/
 
         [Test]
         public void SQliteKeeperIOSTest()
@@ -101,5 +81,31 @@ namespace PaintTest
             Assert.AreEqual(testDrawModel.CurrentColor, actualDrawModel.CurrentColor);
             Assert.AreEqual(testDrawModel.Paths.Count, actualDrawModel.Paths.Count);
         }
+
+        /*  [Test]
+            public void InternalKeeperIOSTest()
+            {
+                internalKeeper= new Paint.iOS.Keeper.InternalKeeper();
+                internalKeeper.Save(testDrawModel);
+
+                actualDrawModel = internalKeeper.Load();
+
+                Assert.AreEqual(testDrawModel.CurrentLineWidth, actualDrawModel.CurrentLineWidth);
+                Assert.AreEqual(testDrawModel.CurrentColor, actualDrawModel.CurrentColor);
+                Assert.AreEqual(testDrawModel.Paths.Count, actualDrawModel.Paths.Count);
+            } */
+
+
+        /*  [Test]
+          public void FactoryKeeperIOSTest()
+          {
+            factory= new Paint.iOS.Keeper.DrawKeeperFactory();
+              FileKeeperIOS excpected = new FileKeeperIOS();
+              //var actual = factory.Create(EDrawKeeperType.File);
+
+              FileKeeperIOS actual = new FileKeeperIOS();
+              Assert.AreEqual(excpected, actual);
+              // Assert.AreSame(excpected, actual);
+          }*/
     }
 }
