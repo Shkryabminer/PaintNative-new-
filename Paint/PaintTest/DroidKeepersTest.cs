@@ -16,7 +16,7 @@ namespace PaintTest
         DrawModel testDrawModel;
         DrawModel actualDrawModel;
 
-        DrawModel testOneDrawModel;
+        
 
         [SetUp]
         public void Setup()
@@ -42,18 +42,7 @@ namespace PaintTest
             Assert.AreEqual(testDrawModel.Paths.Count, actualDrawModel.Paths.Count);
         }
 
-        /* [Test]
-         public void InernalKeeperDroidTest()
-         {
-             internalKeeper = new InternalKeeper();
-             internalKeeper.Save(testDrawModel);
 
-             actualDrawModel = internalKeeper.Load();
-
-             Assert.AreEqual(testDrawModel.CurrentLineWidth, actualDrawModel.CurrentLineWidth);
-             Assert.AreEqual(testDrawModel.CurrentColor, actualDrawModel.CurrentColor);
-             Assert.AreEqual(testDrawModel.Paths.Count, actualDrawModel.Paths.Count);
-         }*/
 
         [Test]
         public void RealmKeeperDroidTest()
@@ -64,8 +53,8 @@ namespace PaintTest
             actualDrawModel = realm.Load();
 
             Assert.AreEqual(testDrawModel.CurrentLineWidth, actualDrawModel.CurrentLineWidth);
-            //   Assert.AreEqual(testDrawModel.CurrentColor, actualDrawModel.CurrentColor);
-            //  Assert.AreEqual(testDrawModel.Paths.Count, actualDrawModel.Paths.Count);
+            Assert.AreEqual(testDrawModel.CurrentColor, actualDrawModel.CurrentColor);
+            Assert.AreEqual(testDrawModel.Paths.Count, actualDrawModel.Paths.Count);
         }
         [Test]
         public void SQLiteKeeperDroidTest()
@@ -79,6 +68,20 @@ namespace PaintTest
             actualDrawModel = sqlite.Load();
 
             Assert.AreEqual(testDrawModel.CurrentLineWidth, actualDrawModel.CurrentLineWidth);
+            Assert.AreEqual(testDrawModel.CurrentColor, actualDrawModel.CurrentColor);
+            Assert.AreEqual(testDrawModel.Paths.Count, actualDrawModel.Paths.Count);
         }
+
+        /* [Test]
+       {
+       internalKeeper = new InternalKeeper();
+       internalKeeper.Save(testDrawModel);
+
+       actualDrawModel = internalKeeper.Load();
+
+       Assert.AreEqual(testDrawModel.CurrentLineWidth, actualDrawModel.CurrentLineWidth);
+       Assert.AreEqual(testDrawModel.CurrentColor, actualDrawModel.CurrentColor);
+       Assert.AreEqual(testDrawModel.Paths.Count, actualDrawModel.Paths.Count);
+        }*/
     }
 }
