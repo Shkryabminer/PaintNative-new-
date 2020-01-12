@@ -34,6 +34,28 @@ namespace PaintTest
             int actual = drawModel.Paths.Count;
             Assert.AreEqual(expected, actual);
         }
+        [Test]
+        public void StartPath_Test()
+        {
+            drawModel.StartPath(new Point(0, 0));
+            int actual = drawModel.Paths.Count;
+
+            int expected = 3;
+
+            Assert.AreEqual(expected, actual);
+
+        }
+        [Test]
+        public void AppendPath_Test()
+        {
+            drawModel.AppendPath(new Point(0, 0));
+            int actual = drawModel.Paths[drawModel.Paths.Count-1].Points.Count;
+
+            int expected = 3;
+
+            Assert.AreEqual(expected, actual);
+
+        }
 
         [TearDown]
         public void Destroy()
