@@ -3,9 +3,10 @@ using System.Linq;
 using Newtonsoft.Json;
 using Paint.Draw;
 using Paint.Droid.Model;
+using Paint.Keeper;
 using Realms;
 
-namespace Paint.Keeper
+namespace Paint.Droid.Keeper
 {
     public class RealmKeeper : IDrawKeeper
     {

@@ -1,4 +1,4 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Paint.Draw;
 using System.Collections.Generic;
 
@@ -38,7 +38,7 @@ namespace PaintTest
         [TearDown]
         public void Destroy()
         {
-            Assert.Pass();
+            drawModel = null;
         }
     }
 }
