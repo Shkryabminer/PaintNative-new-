@@ -17,7 +17,7 @@ namespace Paint.Draw
             CurrentColor = current_color;
             CurrentLineWidth = current_line_width;
         }
-        
+
         [JsonProperty("path")]
         public List<Path> Paths { get; }
         
