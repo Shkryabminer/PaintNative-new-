@@ -214,8 +214,6 @@
     <Compile Include="Keeper\DrawKeeperFactory.cs" />
     <Compile Include="Keeper\FileKeeperDroid.cs" />
     <Compile Include="Keeper\InternalKeeper.cs" />
-    <Compile Include="Model\DrawRealm.cs" />
-    <Compile Include="Keeper\RealmKeeper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

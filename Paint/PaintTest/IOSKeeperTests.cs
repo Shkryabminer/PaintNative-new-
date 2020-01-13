@@ -4,8 +4,7 @@ using System.Drawing;
 using NUnit.Framework;
 using Paint.Draw;
 using Paint.iOS.Keeper;
-
-
+using Paint.Keeper;
 
 namespace PaintTest
 {

@@ -2,10 +2,10 @@
 using System.Linq;
 using Newtonsoft.Json;
 using Paint.Draw;
-using Paint.Keeper;
+using Paint.Model;
 using Realms;
 
-namespace Paint.iOS.Keeper
+namespace Paint.Keeper
 {
     public class RealmKeeper : IDrawKeeper
     {

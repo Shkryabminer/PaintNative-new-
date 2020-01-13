@@ -63,8 +63,16 @@ namespace Paint.Droid
                     _drawKeeper.Save(_drawModel);
                     return true;
                 case Resource.Id.Load:
-                    _drawModel = _drawKeeper.Load();
-                    _drawingLine.UpdateView(_drawModel.Paths);
+                    try
+                    {
+                        _drawModel = _drawKeeper.Load();
+                        _drawingLine.UpdateView(_drawModel.Paths);
+                    }
+                    catch (System.Exception ex)
+                    {
+
+                    }
+                   
                     return true;
 
                 default: return false;

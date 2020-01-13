@@ -39,8 +39,16 @@ namespace Paint.iOS
 
         private void BtnLoadOnTouchUpInside(object sender, EventArgs e)
         {
-            _drawModel = _drawKeeper.Load();
-            _paintView.UpdateView(_drawModel.Paths);
+            try
+            {
+                _drawModel = _drawKeeper.Load();
+                _paintView.UpdateView(_drawModel.Paths);
+            }
+            catch (Exception ex)
+            {
+
+            }
+        
         }
 
         private void BtnSaveOnTouchUpInside(object sender, EventArgs e)
