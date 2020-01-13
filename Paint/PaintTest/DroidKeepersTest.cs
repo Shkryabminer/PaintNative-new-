@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using Paint.Draw;
 using Paint.Droid.Keeper;
+using Paint.Keeper;
 using System;
 using System.Collections.Generic;
 

@@ -50,7 +50,7 @@ namespace Paint.Droid
                     _drawKeeper = new DrawKeeperFactory().Create(EDrawKeeperType.File);
                     _drawKeeper.Save(_drawModel);
                     return true;
-                case Resource.Id.SaveToNSUserDefoult:
+                case Resource.Id.SaveToSharedPreferance:
                     _drawKeeper = new DrawKeeperFactory().Create(EDrawKeeperType.Internal);
                     _drawKeeper.Save(_drawModel);
                     return true;
@@ -62,20 +62,37 @@ namespace Paint.Droid
                     _drawKeeper = new DrawKeeperFactory().Create(EDrawKeeperType.SQLite);
                     _drawKeeper.Save(_drawModel);
                     return true;
-                case Resource.Id.Load:
-                    try
-                    {
-                        _drawModel = _drawKeeper.Load();
-                        _drawingLine.UpdateView(_drawModel.Paths);
-                    }
-                    catch (System.Exception ex)
-                    {
-
-                    }
-                   
+                case Resource.Id.ClickLoadToFile:
+                    _drawKeeper = new DrawKeeperFactory().Create(EDrawKeeperType.File);
+                    LoadFile();
                     return true;
-
+                case Resource.Id.ClickLoadToSharedPreferance:
+                    _drawKeeper = new DrawKeeperFactory().Create(EDrawKeeperType.Internal);
+                    LoadFile();
+                    return true;
+                case Resource.Id.ClickLoadToRealm:
+                    _drawKeeper = new DrawKeeperFactory().Create(EDrawKeeperType.Realm);
+                    LoadFile();
+                    return true;
+                case Resource.Id.ClickLoadToSQLite:
+                    _drawKeeper = new DrawKeeperFactory().Create(EDrawKeeperType.SQLite);
+                    LoadFile();
+                    return true;
                 default: return false;
+            }
+        }
+
+        private void LoadFile()
+        {
+            try
+            {
+                _drawModel = _drawKeeper.Load();
+                _drawingLine.UpdateView(_drawModel.Paths);
+            }
+            catch (System.Exception ex)
+            {
+                _drawModel = new DrawModel();
+                _drawingLine.UpdateView(_drawModel.Paths);
             }
         }
         private void BtnClear_Click(object sender, System.EventArgs e)

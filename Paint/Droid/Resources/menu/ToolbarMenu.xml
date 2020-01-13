@@ -18,14 +18,31 @@
         android:title = "Save to SQLite"/>
 
       <item
-        android:id ="@+id/SaveToNSUserDefoult"
-        android:title = "Save to NSUserDefoult"/>
+        android:id ="@+id/SaveToSharedPreferance"
+        android:title = "Save to Shared Preferance"/>
     </menu>
   </item>
   <item
     android:id ="@+id/Load"
-    android:title ="Load"/>
-  
+    android:title ="Load">
+    <menu>
+      <item
+        android:id ="@+id/ClickLoadToFile"
+        android:title = "Load for File"/>
+
+      <item
+        android:id ="@+id/ClickLoadToRealm"
+        android:title = "Load for Realm"/>
+
+      <item
+        android:id ="@+id/ClickLoadToSQLite"
+        android:title = "Load for SQLite"/>
+
+      <item
+        android:id ="@+id/ClickLoadToSharedPreferance"
+        android:title = "Load for Shared Preferance"/>
+    </menu>
+  </item>
 </menu>
 
 <!-- Code to implement into Activity:
