@@ -39,16 +39,29 @@ namespace Paint.iOS
 
         private void BtnLoadOnTouchUpInside(object sender, EventArgs e)
         {
-            try
-            {
-                _drawModel = _drawKeeper.Load();
-                _paintView.UpdateView(_drawModel.Paths);
-            }
-            catch (Exception ex)
-            {
+            var alert = UIAlertController.Create("Load", "Select load paint", UIAlertControllerStyle.Alert);
+            if (alert.PopoverPresentationController != null)
+                alert.PopoverPresentationController.BarButtonItem = sender as UIBarButtonItem;
 
-            }
-        
+            alert.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
+
+            alert.AddAction(UIAlertAction.Create("Load for File", UIAlertActionStyle.Default, action => {
+                _drawKeeper = new DrawKeeperFactory().Create(EDrawKeeperType.File);
+                LoadFile();
+            }));
+            alert.AddAction(UIAlertAction.Create("Load for Realm", UIAlertActionStyle.Default, action => {
+                _drawKeeper = new DrawKeeperFactory().Create(EDrawKeeperType.Realm);
+                LoadFile();
+            }));
+            alert.AddAction(UIAlertAction.Create("Load for SQLite", UIAlertActionStyle.Default, action => {
+                _drawKeeper = new DrawKeeperFactory().Create(EDrawKeeperType.SQLite);
+                LoadFile();
+            }));
+            alert.AddAction(UIAlertAction.Create("Load for NSUserDefoult", UIAlertActionStyle.Default, action => {
+                _drawKeeper = new DrawKeeperFactory().Create(EDrawKeeperType.Internal);
+                LoadFile();
+            }));
+            PresentViewController(alert, animated: true, completionHandler: null);
         }
 
         private void BtnSaveOnTouchUpInside(object sender, EventArgs e)
@@ -77,6 +90,20 @@ namespace Paint.iOS
             }));
             PresentViewController(alert, animated: true, completionHandler: null);
             
+        }
+
+        private void LoadFile()
+        {
+            try
+            {
+                _drawModel = _drawKeeper.Load();
+                _paintView.UpdateView(_drawModel.Paths);
+            }
+            catch (System.Exception ex)
+            {
+                _drawModel = new DrawModel();
+                _paintView.UpdateView(_drawModel.Paths);
+            }
         }
 
         private void BtnBackTouchUpInside(object sender, EventArgs e)
