@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Newtonsoft.Json;
+using NUnit.Framework;
 using Paint.Draw;
 using System.Collections.Generic;
 
@@ -7,6 +8,7 @@ namespace PaintTest
     public class Tests
     {
         DrawModel drawModel;
+        DrawModel actualDrawModel;
         [SetUp]
         public void Setup()
         {
@@ -55,6 +57,17 @@ namespace PaintTest
 
             Assert.AreEqual(expected, actual);
 
+        }
+
+        [Test]
+        public void SerializeKeeperTest()
+        {
+            string strModel = JsonConvert.SerializeObject(drawModel);
+            actualDrawModel = JsonConvert.DeserializeObject<DrawModel>(strModel);
+
+            Assert.AreEqual(drawModel.CurrentLineWidth, actualDrawModel.CurrentLineWidth);
+            Assert.AreEqual(drawModel.CurrentColor, actualDrawModel.CurrentColor);
+            Assert.AreEqual(drawModel.Paths.Count, actualDrawModel.Paths.Count);
         }
 
         [TearDown]

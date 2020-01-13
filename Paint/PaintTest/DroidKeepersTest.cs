@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Newtonsoft.Json;
+using NUnit.Framework;
 using Paint.Draw;
 using Paint.Droid.Keeper;
 using Paint.Keeper;
@@ -73,16 +74,19 @@ namespace PaintTest
             Assert.AreEqual(testDrawModel.Paths.Count, actualDrawModel.Paths.Count);
         }
 
-        /* [Test]
-       {
-       internalKeeper = new InternalKeeper();
-       internalKeeper.Save(testDrawModel);
+        
+        //[Test]       
+        //public void InternalKeeperDroidTest()
+        //{
+        //    internalKeeper = new InternalKeeper();
+        //    internalKeeper.Save(testDrawModel);
 
-       actualDrawModel = internalKeeper.Load();
+        //    actualDrawModel = internalKeeper.Load();
 
-       Assert.AreEqual(testDrawModel.CurrentLineWidth, actualDrawModel.CurrentLineWidth);
-       Assert.AreEqual(testDrawModel.CurrentColor, actualDrawModel.CurrentColor);
-       Assert.AreEqual(testDrawModel.Paths.Count, actualDrawModel.Paths.Count);
-        }*/
+        //    Assert.AreEqual(testDrawModel.CurrentLineWidth, actualDrawModel.CurrentLineWidth);
+        //    Assert.AreEqual(testDrawModel.CurrentColor, actualDrawModel.CurrentColor);
+        //    Assert.AreEqual(testDrawModel.Paths.Count, actualDrawModel.Paths.Count);
+        //}
+
     }
 }
