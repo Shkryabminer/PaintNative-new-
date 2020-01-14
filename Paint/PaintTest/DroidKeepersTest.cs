@@ -74,19 +74,8 @@ namespace PaintTest
             Assert.AreEqual(testDrawModel.Paths.Count, actualDrawModel.Paths.Count);
         }
 
-        
-        //[Test]       
-        //public void InternalKeeperDroidTest()
-        //{
-        //    internalKeeper = new InternalKeeper();
-        //    internalKeeper.Save(testDrawModel);
 
-        //    actualDrawModel = internalKeeper.Load();
-
-        //    Assert.AreEqual(testDrawModel.CurrentLineWidth, actualDrawModel.CurrentLineWidth);
-        //    Assert.AreEqual(testDrawModel.CurrentColor, actualDrawModel.CurrentColor);
-        //    Assert.AreEqual(testDrawModel.Paths.Count, actualDrawModel.Paths.Count);
-        //}
+ 
 
     }
 }
